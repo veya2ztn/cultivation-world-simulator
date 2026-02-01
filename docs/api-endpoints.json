@@ -1,0 +1,226 @@
+[
+  {
+    "path": "/api/action/clear_long_term_objective",
+    "method": "POST",
+    "function": "clear_long_term_objective",
+    "line": 1227,
+    "description": null
+  },
+  {
+    "path": "/api/action/create_avatar",
+    "method": "POST",
+    "function": "create_avatar",
+    "line": 1396,
+    "description": "创建新角色"
+  },
+  {
+    "path": "/api/action/delete_avatar",
+    "method": "POST",
+    "function": "delete_avatar",
+    "line": 1487,
+    "description": "删除角色"
+  },
+  {
+    "path": "/api/action/set_long_term_objective",
+    "method": "POST",
+    "function": "set_long_term_objective",
+    "line": 1214,
+    "description": null
+  },
+  {
+    "path": "/api/config/current",
+    "method": "GET",
+    "function": "get_current_config",
+    "line": 1058,
+    "description": "获取当前游戏配置（用于回显）"
+  },
+  {
+    "path": "/api/config/language",
+    "method": "GET",
+    "function": "get_language_api",
+    "line": 1509,
+    "description": "获取当前语言设置"
+  },
+  {
+    "path": "/api/config/language",
+    "method": "POST",
+    "function": "set_language_api",
+    "line": 1514,
+    "description": "设置并保存语言设置"
+  },
+  {
+    "path": "/api/config/llm",
+    "method": "GET",
+    "function": "get_llm_config",
+    "line": 1569,
+    "description": "获取当前 LLM 配置"
+  },
+  {
+    "path": "/api/config/llm/save",
+    "method": "POST",
+    "function": "save_llm_config",
+    "line": 1605,
+    "description": "保存 LLM 配置"
+  },
+  {
+    "path": "/api/config/llm/status",
+    "method": "GET",
+    "function": "get_llm_status",
+    "line": 1073,
+    "description": "获取 LLM 配置状态"
+  },
+  {
+    "path": "/api/config/llm/test",
+    "method": "POST",
+    "function": "test_llm_connection",
+    "line": 1580,
+    "description": "测试 LLM 连接"
+  },
+  {
+    "path": "/api/control/pause",
+    "method": "POST",
+    "function": "pause_game",
+    "line": 1003,
+    "description": "暂停游戏循环"
+  },
+  {
+    "path": "/api/control/reinit",
+    "method": "POST",
+    "function": "reinit_game",
+    "line": 1154,
+    "description": "重新初始化游戏（用于错误恢复）。"
+  },
+  {
+    "path": "/api/control/reset",
+    "method": "POST",
+    "function": "reset_game",
+    "line": 991,
+    "description": "重置游戏到 Idle 状态（回到主菜单）"
+  },
+  {
+    "path": "/api/control/resume",
+    "method": "POST",
+    "function": "resume_game",
+    "line": 1009,
+    "description": "恢复游戏循环"
+  },
+  {
+    "path": "/api/control/set_phenomenon",
+    "method": "POST",
+    "function": "set_phenomenon",
+    "line": 1375,
+    "description": null
+  },
+  {
+    "path": "/api/control/shutdown",
+    "method": "POST",
+    "function": "shutdown_server",
+    "line": 1015,
+    "description": null
+  },
+  {
+    "path": "/api/detail",
+    "method": "GET",
+    "function": "get_detail_info",
+    "line": 1171,
+    "description": "获取结构化详情信息，替代/增强 hover info"
+  },
+  {
+    "path": "/api/events",
+    "method": "GET",
+    "function": "get_events",
+    "line": 865,
+    "description": "分页获取事件列表。"
+  },
+  {
+    "path": "/api/events/cleanup",
+    "method": "DELETE",
+    "function": "cleanup_events",
+    "line": 911,
+    "description": "清理历史事件（用户触发）。"
+  },
+  {
+    "path": "/api/game/load",
+    "method": "POST",
+    "function": "api_load_game",
+    "line": 1717,
+    "description": "加载游戏（异步，支持进度更新）。"
+  },
+  {
+    "path": "/api/game/save",
+    "method": "POST",
+    "function": "api_save_game",
+    "line": 1695,
+    "description": "保存游戏"
+  },
+  {
+    "path": "/api/game/start",
+    "method": "POST",
+    "function": "start_game",
+    "line": 1082,
+    "description": "保存配置并开始新游戏。"
+  },
+  {
+    "path": "/api/init-status",
+    "method": "GET",
+    "function": "get_init_status",
+    "line": 1029,
+    "description": "获取初始化状态。"
+  },
+  {
+    "path": "/api/map",
+    "method": "GET",
+    "function": "get_map",
+    "line": 938,
+    "description": "获取静态地图数据（仅需加载一次）"
+  },
+  {
+    "path": "/api/meta/avatar_list",
+    "method": "GET",
+    "function": "get_avatar_list_simple",
+    "line": 1338,
+    "description": "获取简略的角色列表，用于管理界面"
+  },
+  {
+    "path": "/api/meta/avatars",
+    "method": "GET",
+    "function": "get_avatar_meta",
+    "line": 784,
+    "description": null
+  },
+  {
+    "path": "/api/meta/game_data",
+    "method": "GET",
+    "function": "get_game_data",
+    "line": 1264,
+    "description": "获取游戏元数据（宗门、个性、境界等），供前端选择"
+  },
+  {
+    "path": "/api/meta/phenomena",
+    "method": "GET",
+    "function": "get_phenomena_list",
+    "line": 1363,
+    "description": "获取所有可选的天地灵机列表"
+  },
+  {
+    "path": "/api/saves",
+    "method": "GET",
+    "function": "get_saves",
+    "line": 1680,
+    "description": "获取存档列表"
+  },
+  {
+    "path": "/api/state",
+    "method": "GET",
+    "function": "get_state",
+    "line": 789,
+    "description": "获取当前世界的一个快照（调试模式）"
+  },
+  {
+    "path": "/ws",
+    "method": "WEBSOCKET",
+    "function": "websocket_endpoint",
+    "line": 757,
+    "description": null
+  }
+]

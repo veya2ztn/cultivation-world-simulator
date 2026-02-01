@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(python tools/generate_action.py:*)",
+      "Bash(python tools/ai_dev_assistant.py:*)",
+      "Bash(move:*)"
+    ]
+  }
+}
