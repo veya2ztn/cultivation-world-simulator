@@ -71,6 +71,7 @@ from src.mcp_server.prompts import (
 )
 
 from src.mcp_server.permissions import PermissionLevel, check_permission
+from src.mcp_server.invitations import get_invitation_manager
 from src.sim.simulator import Simulator
 from src.classes.world import World
 from src.utils.config import load_config
@@ -78,11 +79,39 @@ from src.utils.config import load_config
 # Initialize server
 app = Server("cultivation-world-mcp")
 
+# Validate invitation code and determine permission level
+def validate_invitation() -> PermissionLevel:
+    """
+    Validate invitation code from environment variable.
+
+    Returns:
+        PermissionLevel based on valid invitation, or OBSERVER if no/invalid code
+    """
+    api_key = os.environ.get("CULTIVATION_WORLD_API_KEY", "").strip()
+
+    if not api_key:
+        print("Warning: No CULTIVATION_WORLD_API_KEY provided. Running in OBSERVER mode.",
+              file=sys.stderr)
+        return PermissionLevel.OBSERVER
+
+    # Validate with invitation manager
+    invitation_manager = get_invitation_manager()
+    permission_level = invitation_manager.validate_code(api_key)
+
+    if permission_level is None:
+        print(f"Warning: Invalid or expired invitation code. Running in OBSERVER mode.",
+              file=sys.stderr)
+        return PermissionLevel.OBSERVER
+
+    print(f"Invitation code validated. Permission level: {permission_level.value}",
+          file=sys.stderr)
+    return permission_level
+
 # Global state
 STATE = {
     "world": None,
     "sim": None,
-    "permission_level": PermissionLevel.OBSERVER,  # Default: observer mode
+    "permission_level": validate_invitation(),  # Validate invitation code
     "ai_avatar_id": None,  # ID of AI-controlled avatar (if any)
 }
 

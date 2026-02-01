@@ -4,7 +4,10 @@
       "Bash(tree:*)",
       "Bash(python tools/generate_action.py:*)",
       "Bash(python tools/ai_dev_assistant.py:*)",
-      "Bash(move:*)"
+      "Bash(move:*)",
+      "Bash(python tools/setup_invitations.py:*)",
+      "Bash(python tools/manage_invitations.py list:*)",
+      "Bash(python tools/manage_invitations.py:*)"
     ]
   }
 }
